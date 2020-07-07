@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration Form</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="row justify-content-center ">
+          <h2 style="color: yellowgreen;">Register</h2>
+        </div>
+
+        <!-- connect with the ts property -->
+        <form class="form-group" [formGroup]="myReactiveForm" (ngSubmit)="onsubmit()">
+
+          <div class="row justify-content-center ">
+            <div class="col-md-6">
+
+
+              <!-- username -->
+              <label class="form-label" for="username">Username<span class="text-danger">*</span></label>
+              <div class="row justify-content-center ">
+                <!-- access control from ts property -->
+                <input id="username" formControlName="username" class="form-control" type="text" />
+                <small *ngIf="!myReactiveForm.get('username').valid && myReactiveForm.get('username').touched" class="text-danger">
+                  <splan *ngIf="myReactiveForm.get('username').errors['required']">Please fill this field </splan>
+                  <span *ngIf="myReactiveForm.get('username').errors['NamenotAllowed ']">{{myReactiveForm.get('username').value}} name is not
+                    allowed</span>
+                </small>
+              </div>
+
+              <!-- email -->
+
+              <label class="form-label mt-2" for="email">Email<span class="text-danger">*</span></label>
+              <div class="row justify-content-center">
+                <input id="email" formControlName="email" class="form-control " type="email" />
+                <small *ngIf="!myReactiveForm.get('email').valid && myReactiveForm.get('email').touched"
+                  class="text-danger">Pleease enter valid Email </small>
+              </div>
+
+
+              <!-- role -->
+
+              <label class="form-label mt-2" for="role">Select Role<span class="text-danger">*</span></label>
+              <div class="row justify-content-center ">
+                <select id="role" class="form-control " formControlName="role">
+                  <option>Admin</option>
+                  <option>Executive</option>
+                </select>
+
+              </div>
+
+              <!-- address -->
+
+              <label class="form-label mt-3" for="address">Address<span class="text-danger">*</span></label>
+              <div class="row justify-content-center ">
+                <textarea id="address" formControlName="address" class="form-control " rows="3" cols="15"></textarea>
+
+              </div>
+
+              <!-- skills -->
+              <label class="form-label mt-3" for="skills">Skills<span class="text-danger">*</span></label>
+              <div class="row justify-content-center ">
+                <!-- for repeat controls of input field -->
+                <ng-container formArrayName="skills"
+                  *ngFor="let skill of myReactiveForm.get('skills')['controls']; index as i">
+                  <input id="skills" formControlName="{{i}}" class="form-control mt-1" type="text" />
+                </ng-container>
+
+                <button (click)="onadd()" class="btn btn-light mt-1">Add Skills</button>
+
+              </div>
+
+
+              <div class="row justify-content-center mt-4">
+                <input class="btn btn-success btn-block " type="submit" name="submit" value="Register">
+              </div>
+            </div>
+          </div>
+        </form>
+
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>

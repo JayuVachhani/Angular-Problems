@@ -1,0 +1,25 @@
+.parentbox1{
+    border: 3px solid blue;
+    height: 400px;
+    width: 40%;
+    margin:30px 30px; 
+    padding: 20px;
+
+}
+.write{
+    margin: 20px 20px;
+}
+.btn-primary{
+margin-top: 17px;
+}
+.row{
+    display: flex;
+}
+.parent2{
+    border: 3px solid blue;
+    height: 400px;
+    width: 40%;
+    margin: 30px 90px;
+    padding:  20px;
+
+}

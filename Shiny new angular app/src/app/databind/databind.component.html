@@ -1,0 +1,224 @@
+
+
+
+<!-- <p>Hello my name is {{name}}</p> -->
+<p>mathemetical in string interpolation<br>
+{{5+9}}
+<br>
+<br>
+
+<!-- string interpolation -->
+<p>string interpolation<br>
+hello my name is {{name}} and my age is {{11+10}} 
+i am from motimaad.
+<br>
+<br>
+{{"my status is now     " + appStatus}}
+
+<br>
+<br>
+<!-- button click method event binding -->
+<p>button event binding<br>
+<button class="btn btn-success" (click)="onClick()" >Click Here to change name</button>
+<p>{{Name}} </p> 
+
+<!--property binding  -->
+<p>property binding<br>
+<input type="text" name="" [value]="Namee">
+
+
+<br>
+<br>
+
+<!-- Two way data binding-->
+<!-- import formsmodule in app.ts for this -->
+<p>two way binding<br>
+<input type="text" [(ngModel)]="yourmessage"><br>
+{{yourmessage}}
+
+<br>
+<br>
+<p>ngclass
+<!-- ngClass check in inspect -->
+<div class="box" [class.myclass]="mypro">welcome</div>
+<br>
+<br>
+<p>ngstyle
+<!-- ngStyle -->
+<div class="box" [style.color]="mystyle">welcome</div>
+<br>
+<br>
+
+<!-- for multiple class -->
+<!-- 'class1 class2 class3' -->
+<p>multiclass ecample<br>
+<div class="cls" [ngClass]="mltclasses">there</div>
+<br>
+<br>
+<!-- for multiple style -->
+<p>multistyle example<br>
+<div class="cls" [ngStyle]="mltstyles">there</div> 
+<br>
+<br>
+
+<!-- template -->
+<!-- on click other element get reference others -->
+<!-- check in console -->
+<!-- instead of id(identifier) use #identifier in Angular-->
+<!-- no need to use target because we get acceess using #property -->
+<p>template<br>
+<input type="text" value="Jay" name="Vachhani" #inputinfo>
+<br>
+<button (click)="getinputinfo(inputinfo)">Get info</button>
+<br>
+<br>
+
+<!-- NGX Bootstrap  -----------Datepicker-->
+ <div class="row">
+    <div class="col-xs-12 col-12 col-md-4 form-group">
+        <input type="text"
+        placeholder="Datepicker"
+        class="form-control"
+        bsDatepicker>
+    </div>
+    
+</div>
+<br>
+<br>
+<!-- Animated toggle -->
+<button type="button" class="btn btn-primary" (click)="isCollapsed = !isCollapsed"
+        [attr.aria-expanded]="!isCollapsed" aria-controls="collapseBasic">Toggle collapse
+</button>
+<hr>
+<div id="collapseBasic" [collapse]="isCollapsed" [isAnimated]="true">
+  <div class="well well-lg card card-block card-header">Some content</div>
+</div>
+<br>
+<br>
+<!-- ngif (Structural Directive) -->
+<p>NgIf<br>
+<button class="btn btn-success" (click)="oncreate()">NgIf</button><br>
+<div *ngIf="isValid">Hello Jay Welcome</div>
+<br>
+<br>
+
+<p>NgIf-else<br>
+    <button class="btn btn-success" (click)="oncreatebtn()">NgIf-else</button><br>
+<div *ngIf="isVal; else elseblock">Hello Jay Welcome</div>
+<ng-template #elseblock>
+    <div>How are you?</div>
+</ng-template>
+<br>
+<br>
+<p>NgIf-else-then<br>
+    <button class="btn btn-success" (click)="oncreatebtnthen()">NgIf-else-then</button><br>
+<div *ngIf="isVali; then thenblock else elseblock">Hello Jay Welcome</div>
+<ng-template #elseblock>
+    <div>How are you?</div>
+</ng-template>
+<ng-template #thenblock>
+    <div>Where are you from?</div>
+</ng-template>
+<br>
+<br>
+
+<p>NgSwitch<br>
+    <div class="container">
+        <div class="col-md-4">
+    <select class="form-control" (change)="getproductvalue($event)">
+        <option value="Laptop">Laptop</option>
+        <option value="Mobile">Mobile</option>
+        <option value="TV">TV</option>
+    </select>
+    </div>
+    </div>
+    <div class="container">
+    <div class="col-md-12" [ngSwitch]="selectedproduct">
+        You Choose:
+        <h3 class="text-success" *ngSwitchCase="'Laptop'">Laptop</h3>
+        <h3 class="text-success" *ngSwitchCase="'Mobile'">Mobile</h3>
+        <h3 class="text-success" *ngSwitchCase="'TV'">TV</h3>
+        
+        </div>    
+    <br>
+    <br>
+    <!-- ngFor -->
+    <p>ngFor<br>
+        <!--*ngFor = "let varname of propertyname"  -->
+        <div class="container">
+            <div class="row">
+            <div class="col-md-8">
+    <table class="table">
+        <thead class="thread-dark">
+            <tr>
+                <th >Sr. No</th>
+                <th >Product Image</th>
+                <th >Product Name</th>
+                <th >Product Id</th>
+             </tr>
+        </thead>
+        <tbody>
+        
+                <tr *ngFor="let mypro of products; index as i">
+                    <td># {{i+1}}</td>
+                    <td ><img src="{{mypro.proimg}}" width="70" alt="{{mypro.name}}"></td>
+                    <td >{{mypro.name}}</td>
+                    <td >{{mypro.id}}</td>
+                 </tr>
+        </tbody>
+    </table>
+    </div>
+    </div>
+</div>
+<br>
+<br>
+
+<!-- push and splice -->
+<div class="container">
+<div class="row">
+    <div class="col-md-3">
+        <input type="text" class="form-control" #username placeholder="username">
+</div>
+<div class="col-md-3">
+    <button class="btn btn-success" (click)="oncreateuser(username)">Create user</button><br>
+</div><br>
+<div class="col-md-2">
+    <button class="btn btn-danger" (click)="onremoveuser()">Remove user</button><br>
+</div><br>
+</div>
+<br>
+<div class="row">
+    <div class="col-md-10">
+        <table class="table">
+            <thead>
+                <tr>
+                <th>UserName</th>
+                <th>Remove User</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let user of users; index as i">
+                <td >{{user.name}}</td>
+                <td>
+                    <button class="btn btn-danger" (click)="removeuser(i)">Remove user</button>
+                </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</div>
+<br>
+<br>
+
+
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>

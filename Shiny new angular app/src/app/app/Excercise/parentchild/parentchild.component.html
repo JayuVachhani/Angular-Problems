@@ -1,0 +1,16 @@
+<h2>Child</h2>
+    
+    <div class="row">
+        <div class="childbox1">
+            <h3 class="tect-success">User Details</h3>
+            <input type="text" #inputusername placeholder="User details" style="width: 400px;">
+            <button class="btn btn-primary" style="float:right;" (click)="senddatatoparent(inputusername)">Send to Users</button>
+            <label for="Total_Users" style="margin:30px 30px;" ><strong>Total Users</strong></label>
+        </div>
+        <div class="childbox2">
+            <h3 class="tect-success">Admin Details</h3>
+            <input type="text" #inputadminname class="write" placeholder="Admin details" style="width: 400px;">
+            <button class="btn btn-primary" style="float:right;" (click)="senddatatoadmin(inputadminname)">Send to Admin</button>
+            <label for="Total_Users" style="margin:30px 30px;" ><strong>Total Admins</strong></label>
+        </div>
+    </div>

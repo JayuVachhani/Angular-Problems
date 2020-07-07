@@ -1,0 +1,32 @@
+
+  <h3>Customer Management</h3>
+  <p>
+
+  </p>
+  <div class="row">
+    <table style="border: 2px solid; display: inline-block; margin-left: 20px;"  *ngIf="ItemsArray && ItemsArray.length">
+      <thead style="text-align: center;" >
+        <th>Select</th>
+        <th >Customer ID</th>&nbsp;
+        <th>Customer Name</th>&nbsp;
+        <th>Customer Age</th>&nbsp;
+        <th>Customer Mobile Number</th>&nbsp;
+        <th>Customer RegStatus</th>
+        
+      </thead>
+      <tbody style="text-align: center;"  >
+        <tr *ngFor="let item of ItemsArray" #data>
+            <td><input type='checkbox' width='50'></td>
+           <td>{{ item.id }}</td>&nbsp;
+           <td>{{ item.customerName }}</td>&nbsp;
+           <td>{{ item.customerAge }}</td>&nbsp;
+           <td>{{ item.customerMobileNumber}}</td>&nbsp;
+           <td>{{ item.regstatus}}</td>
+           
+        </tr>
+     </tbody><br>
+    </table>
+    
+    
+  </div>
+  <button (click)="checkAll()">SelectAll</button>

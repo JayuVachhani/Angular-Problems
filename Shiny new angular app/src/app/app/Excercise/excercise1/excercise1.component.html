@@ -1,0 +1,27 @@
+<h1 class="text-success" style="text-align: center;">Excercise</h1>
+
+    <h3 class="text">Parent</h3>
+
+    <div class="row">
+        <div class="parentbox1">
+        <h3 class="text-success">Users</h3>
+        <h2 *ngIf="!selectproduct">Please add User from child</h2>       
+                <div *ngFor="let user of users; index as i">
+                <strong>{{users.name}}</strong>&nbsp;                
+                    <button class="btn btn-danger" (click)="removeuser(i)">Remove user</button>                
+                </div>   
+               </div>
+        <div class="parent2">
+        <h3 class="text-success">Admin</h3>
+        <h2 *ngIf="!selectproduct">Please add Admin from child</h2>       
+        <div *ngFor="let admin of admins; index as i">
+        <strong>{{admins.name}}</strong>&nbsp;                
+            <button class="btn btn-danger" (click)="removeadmin(i)">Remove Admin</button>                
+        </div> 
+        </div>
+    
+    </div><br>
+    
+    <app-parentchild (userlist)="senddatatoparent($event)" (adminlist)="senddatatoadmin($event)"></app-parentchild>
+    
+

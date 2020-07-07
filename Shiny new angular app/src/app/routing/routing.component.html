@@ -1,0 +1,22 @@
+<!-- Routing -->
+<!-- It denotes page's navigation  like localhost:4200 etc -->
+<!-- Instead of href here angular provides routerLink for better result in without load the page -->
+<!-- routerlinkactive shows active tab of navbar -->
+<!-- routerLinkActive="myActiveClass active" [routerLinkActiveOptions]="{exact:true}" -->
+<!-- above code shows that we can off the default active tab and when its path match then it will active -->
+<p>Routing<br>
+    <header>
+        <nav>
+            <ul class="nav nav-tabs">
+                <li class = "nav-item"><a class="nav-link"routerLinkActive="active" routerLink="home">Home</a></li>
+                <li class = "nav-item"><a class="nav-link"routerLinkActive="active" routerLink="about">About us</a></li>
+                <li class = "nav-item"><a class="nav-link"routerLinkActive="active" routerLink="products">products</a></li>
+                <li class = "nav-item"><a class="nav-link"routerLinkActive="active" routerLink="buy products">Buy Products</a></li>
+                <li class = "nav-item"><a class="nav-link"routerLinkActive="active" routerLink="contact">Contact Us</a></li>
+
+            </ul>
+        </nav>
+    </header>
+    <!-- it will show conected component's content -->
+    <router-outlet></router-outlet> 
+    

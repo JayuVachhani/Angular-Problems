@@ -1,0 +1,23 @@
+.childbox1{
+    border: 3px solid red;
+    height: 200px;
+    width: 40%;
+     margin:30px 50px; 
+
+}
+.write{
+    margin: 20px 20px;
+}
+.btn-primary{
+margin-top: 17px;
+}
+.row{
+    display: flex;
+}
+.childbox2{
+    border: 3px solid red;
+    height: 200px;
+    width: 40%;
+    margin: 30px 50px;
+
+}

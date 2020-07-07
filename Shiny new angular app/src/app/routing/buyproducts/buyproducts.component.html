@@ -1,0 +1,50 @@
+<div class="page-area">
+    <h2>
+        Buy Products
+    </h2>
+    <div class="alert alert-light border d-flex" role="alert" *ngIf="list" >
+        <strong class="text-success">{{list}}</strong>&nbsp; added in cart
+      <button class="btn btn-success ml-auto"(click)="msgAlert()">Chechout</button>  
+      </div>
+        <hr class="mb-3">
+<div class="row">
+    <div class="col-md-12">
+<div class="card" style="width: 15.5rem;">
+    <img src="../../../assets/image.webp" class="card-img-top" alt="laptop">
+    <div class="card-body">
+      <h5 class="card-title">Laptop</h5>
+      
+      <button class="btn btn-primary" (click)="onselect('Laptop')" >Select</button>
+    </div>
+  </div>
+  <div class="card" style="width: 15.5rem;">
+    <img src="../../../assets/OnePlus_8_Pro.png" class="card-img-top" alt="Mobile">
+    <div class="card-body"> 
+      <h5 class="card-title">Mobile</h5>
+      
+      <button class="btn btn-primary" (click)="onselect('Mobile')">Select</button>
+    </div>
+  </div>
+  <div class="card" style="width: 15.5rem;">
+    <img src="../../../assets/tv-image.jpg" class="card-img-top" alt="TV">
+    <div class="card-body">
+      <h5 class="card-title">TV</h5>
+      
+      <button class="btn btn-primary" (click)="onselect('TV')">Select</button>
+    </div>
+  </div>
+  <div class="card" style="width: 15.5rem;">
+    <img src="../../../assets/best-dslr-camera.jpg" class="card-img-top" alt="Camera">
+    <div class="card-body">
+      <h5 class="card-title">Camera</h5>
+      
+      <button class="btn btn-primary" (click)="onselect('Camera')">Select</button>
+    </div>
+  </div>
+  <app-child [selectproduct]="sltpro" [selecteditem]="sltitem" (list)="productinlist($event)"></app-child>
+</div>
+<!-- to display result in one page -->
+<!-- <div class="col-md-6"> 
+  <router-outlet></router-outlet>
+</div> -->
+</div>
